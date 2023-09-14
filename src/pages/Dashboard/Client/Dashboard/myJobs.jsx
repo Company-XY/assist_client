@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const MyJobs = () => {
   const [activeTab, setActiveTab] = useState("open");
@@ -58,6 +60,10 @@ const MyJobs = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+  const navigate = useNavigate();
+  const reviewJob = () => {
+    navigate("/dashboard/client/review");
+  };
 
   return (
     <div className="p-4 ">
@@ -67,7 +73,7 @@ const MyJobs = () => {
           onClick={() => handleTabClick("open")}
           className={`${
             activeTab === "open"
-              ? "bg-purple-800 text-white"
+              ? "bg-blue-800 text-white"
               : "bg-gray-200 text-gray-800"
           } px-4 py-2 rounded-full w-full md:w-auto
           sm:px-2 sm:py-2 sm:text-sm sm:font-semibold`}
@@ -78,7 +84,7 @@ const MyJobs = () => {
           onClick={() => handleTabClick("ongoing")}
           className={`${
             activeTab === "ongoing"
-              ? "bg-purple-800 text-white"
+              ? "bg-blue-800 text-white"
               : "bg-gray-200 text-gray-800"
           } px-4 py-2 rounded-full w-full md:w-auto
           sm:px-2 sm:py-2 sm:text-sm sm:font-semibold`}
@@ -89,7 +95,7 @@ const MyJobs = () => {
           onClick={() => handleTabClick("cancelled")}
           className={`${
             activeTab === "cancelled"
-              ? "bg-purple-800 text-white"
+              ? "bg-blue-800 text-white"
               : "bg-gray-200 text-gray-800"
           } px-4 py-2 rounded-full w-full md:w-auto
           sm:px-2 sm:py-2 sm:text-sm sm:font-semibold`}
@@ -100,7 +106,7 @@ const MyJobs = () => {
           onClick={() => handleTabClick("completed")}
           className={`${
             activeTab === "completed"
-              ? "bg-purple-800 text-white"
+              ? "bg-blue-800 text-white"
               : "bg-gray-200 text-gray-800"
           } px-4 py-2 rounded-full w-full md:w-auto
           sm:px-2 sm:py-2 sm:text-sm sm:font-semibold`}
@@ -117,7 +123,15 @@ const MyJobs = () => {
           >
             <h3 className="text-lg font-semibold">{job.title}</h3>
             <p className="text-gray-600">{job.description}</p>
-            <p className="text-gray-400">Status: {job.status}</p>
+            <p className="text-gray-400">Status: {job.status}</p>  
+            {activeTab === "completed" && (
+              <button
+                onClick={() => reviewJob()}
+                className="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 transition duration-300 ease-in-out"
+              >
+                Review Job
+              </button>  
+              )} 
           </div>
         ))}
       </div>
