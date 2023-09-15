@@ -38,7 +38,7 @@ const details = () => {
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-purple-200 rounded-lg p-2"
+                  className="w-full bg-blue-200 rounded-lg p-2"
                   required
                 />
               </div>
@@ -49,7 +49,7 @@ const details = () => {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-purple-200 rounded-lg p-2"
+                  className="w-full bg-blue-200 rounded-lg p-2"
                   required
                 />
               </div>
@@ -60,7 +60,7 @@ const details = () => {
                   id="businessName"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  className="w-full bg-purple-200 rounded-lg p-2"
+                  className="w-full bg-blue-200 rounded-lg p-2"
                   required
                 />
               </div>
@@ -70,7 +70,7 @@ const details = () => {
                   id="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full bg-purple-200 rounded-lg p-2"
+                  className="w-full bg-blue-200 rounded-lg p-2"
                   rows="4"
                   required
                 />
@@ -80,7 +80,7 @@ const details = () => {
                 <select
                   onChange={(e) => setBudget(e.target.value)}
                   value={budget}
-                  className="border-2 border-purple-800 rounded-lg h-10 py-2 px-4"
+                  className="border-2 border-blue-800 rounded-lg h-10 py-2 px-4"
                 >
                   <option>Below 5000</option>
                   <option>5000 - 15000</option>
@@ -91,7 +91,7 @@ const details = () => {
               </div>
             </form>
             <button
-              className="w-1/5 rounded-lg border-2 mt-5 py-2 px-4 bg-purple-600 hover:bg-purple-800"
+              className="w-1/5 rounded-lg border-2 mt-5 py-2 px-4 bg-blue-600 hover:bg-blue-800"
               onClick={handleNextStep}
             >
               Next
@@ -104,13 +104,13 @@ const details = () => {
             <h2>Step 2: Review and Confirmation</h2>
 
             <button
-              className="w-1/5 rounded-lg border-2 mx-4 py-2 px-4 bg-snow-100 hover:bg-purple-200"
+              className="w-1/5 rounded-lg border-2 mx-4 py-2 px-4 bg-snow-100 hover:bg-blue-200"
               onClick={handlePrevStep}
             >
               Edit
             </button>
             <button
-              className="w-1/5 rounded-lg border-2 py-2 px-4 bg-green-600 hover:bg-green-800"
+              className="w-1/5 rounded-lg border-2 py-2 px-4 bg-blue-600 hover:bg-blue-800"
               onClick={handleNextStep}
             >
               Submit
@@ -132,7 +132,7 @@ const details = () => {
 
   return (
     <div className="grid place-items-center">
-      <div className="mt-24 h-[85vh] w-2/3 border-2 rounded-lg">
+      <div className="mt-24 h-[120vh] w-2/3 border-2 rounded-lg">
         <h1 className="font-semibold text-xl text-center py-2">
           Get Guidance by Filling in Details
         </h1>
@@ -140,9 +140,9 @@ const details = () => {
           <span className="font-bold">Go Back</span> To Dashboard
         </h2>
         <div className="border-b-2 mb-4 px-4 py-2">
-          <div className="w-full h-2 bg-purple-200 rounded-full">
+          <div className="w-full h-2 bg-blue-200 rounded-full">
             <div
-              className="h-2 bg-purple-700 rounded-full mt-5"
+              className="h-2 bg-blue-700 rounded-full mt-5"
               style={{ width: `${(currentStep / totalSteps) * 100}%` }}
             ></div>
           </div>
