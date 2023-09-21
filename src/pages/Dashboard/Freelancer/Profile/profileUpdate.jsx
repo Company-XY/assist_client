@@ -61,6 +61,31 @@ const UpdateProfile = () => {
     }
   };
 
+  const handleApproval = async () => {
+    try {
+      const userString = localStorage.getItem("user");
+      if (userString) {
+        const { _id, token } = JSON.parse(userString);
+        const response = await axios.patch(
+          `https://assist-api-okgk.onrender.com/api/v1/profile/${_id}`,
+          { isApproved: true },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log("isApproved status updated successfully:");
+        setIsSuccess(true);
+        console.log(response);
+      } else {
+        console.error("User data not found in localStorage");
+      }
+    } catch (error) {
+      console.error("Failed to update isApproved status:", error);
+    }
+  };
+
   return (
     <div className="mx-auto max-w-2xl p-4">
       <h2 className="text-2xl font-semibold mb-4">Update Your Profile</h2>
