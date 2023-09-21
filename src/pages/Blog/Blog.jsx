@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <>
       <section className="mt-12">
-        <JobTypes />
+        <JobTypes /> 
       </section>
     </>
   );

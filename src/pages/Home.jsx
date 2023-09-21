@@ -9,6 +9,8 @@ import Footer from "../components/Footer/Footer";
 import { useSelector } from "react-redux";
 import BackToTop from "../components/Home/BackToTop";
 import Bot from "../components/bot";
+import JobTypes from "../components/Home/JobTypes";
+
 
 const Home = () => {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
@@ -20,6 +22,7 @@ const Home = () => {
       <Section1 />
       <BackToTop />
       <Services />
+      <JobTypes />
       <Testimonial />
       <Section2 />
       <FAQ />
