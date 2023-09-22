@@ -7,6 +7,7 @@ const JobPage = () => {
   const [job, setJob] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [bidAmount, setBidAmount] = useState("");
+  const [proposal, setProposal] = useState("");
   const [isBidding, setIsBidding] = useState(false);
 
   useEffect(() => {
@@ -39,9 +40,15 @@ const JobPage = () => {
 
     try {
       const response = await axios.post(
-        `https://assist-api-okgk.onrender.com/api/v1/jobs/${jobId}/bids`,
+        //`https://assist-api-okgk.onrender.com/api/v1/jobs/${jobId}/bids`,
+        `https://assist-api-okgk.onrender.com/api/v1/place-bid`,
         {
-          amount: bidAmount,
+          price: bidAmount,
+          job: jobId,
+          //user:
+          //user_email:
+          proposal: proposal,
+          files,
         }
       );
 
@@ -77,6 +84,14 @@ const JobPage = () => {
                 value={bidAmount}
                 onChange={(e) => setBidAmount(e.target.value)}
                 className="w-40 p-2 border border-gray-300 rounded-md mr-2"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Enter your bid amount"
+                value={proposal}
+                onChange={(e) => setProposal(e.target.value)}
+                className="w-80 p-2 border border-gray-300 rounded-md mr-2"
                 required
               />
               <button
