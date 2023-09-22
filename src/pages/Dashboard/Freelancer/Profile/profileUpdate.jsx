@@ -78,12 +78,17 @@ const UpdateProfile = () => {
         console.log("isApproved status updated successfully:");
         setIsSuccess(true);
         console.log(response);
+        handleReload();
       } else {
         console.error("User data not found in localStorage");
       }
     } catch (error) {
       console.error("Failed to update isApproved status:", error);
     }
+  };
+
+  const handleReload = () => {
+    window.location.reload();
   };
 
   return (
