@@ -60,6 +60,16 @@ const JobPage = () => {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
           },
+
+        `https://assist-api-okgk.onrender.com/api/v1/place-bid`,
+        {
+          price: bidAmount,
+          job: jobId,
+          //user:
+          //user_email:
+          proposal: proposal,
+          files,
+
         }
       );
 
