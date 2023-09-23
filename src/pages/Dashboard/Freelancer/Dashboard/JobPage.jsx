@@ -71,6 +71,7 @@ const JobPage = () => {
           proposal: proposal,
           files,
         }
+        //new
       );
 
       console.log("Bid placed successfully:", response.data);
