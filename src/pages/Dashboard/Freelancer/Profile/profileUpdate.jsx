@@ -59,9 +59,8 @@ const UpdateProfile = () => {
     } catch (error) {
       console.error("Failed to update profile:", error);
     }
-  };
 
-  const handleApproval = async () => {
+  const updateIsApproved = async () => {
     try {
       const userString = localStorage.getItem("user");
       if (userString) {
@@ -77,7 +76,6 @@ const UpdateProfile = () => {
         );
         console.log("isApproved status updated successfully:");
         setIsSuccess(true);
-        console.log(response);
         handleReload();
       } else {
         console.error("User data not found in localStorage");
@@ -239,7 +237,7 @@ const UpdateProfile = () => {
             <span>
               Update successful, go to{" "}
               <span className="cursor-pointer underline">
-                <Link to="/dashboard" onClick={handleApproval}>
+                <Link to="/dashboard" onClick={updateIsApproved}>
                   dashboard
                 </Link>
               </span>
