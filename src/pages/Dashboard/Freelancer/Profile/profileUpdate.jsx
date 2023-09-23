@@ -59,7 +59,6 @@ const UpdateProfile = () => {
     } catch (error) {
       console.error("Failed to update profile:", error);
     }
-  };
 
   const updateIsApproved = async () => {
     try {
