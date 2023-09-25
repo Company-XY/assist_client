@@ -23,6 +23,7 @@ const JobPage = () => {
         );
 
         setJob(response.data);
+        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.error("Failed to fetch job details:", error);
@@ -71,7 +72,6 @@ const JobPage = () => {
           proposal: proposal,
           files,
         }
-        //new
       );
 
       console.log("Bid placed successfully:", response.data);
