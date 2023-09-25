@@ -61,6 +61,16 @@ const JobPage = () => {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
           },
+
+        //`https://assist-api-okgk.onrender.com/api/v1/jobs/${jobId}/bids`,
+        `https://assist-api-okgk.onrender.com/api/v1/place-bid`,
+        {
+          price: bidAmount,
+          job: jobId,
+          //user:
+          //user_email:
+          proposal: proposal,
+          files,
         }
       );
 
@@ -123,6 +133,7 @@ const JobPage = () => {
                 onChange={handleFileChange}
                 className="mr-2"
               />
+
               <button
                 type="submit"
                 className={`bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 ${
