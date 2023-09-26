@@ -91,7 +91,7 @@ const PostProject = () => {
 
   return (
     <div className="grid place-items-center">
-      <div className="mt-24 h-[80vh] w-2/3 border-2 rounded-lg">
+      <div className="mt-24 h-[164vh] w-2/3 border-2 rounded-lg">
         <h1 className="font-semibold text-xl text-center py-2">
           Post a Project
         </h1>
@@ -111,18 +111,37 @@ const PostProject = () => {
             <select
               value={Services}
               onChange={(e) => setServices(e.target.value)}
-              className="border-2 border-purple-800 rounded-lg h-10 py-2 px-4"
-            >
+              className="border-2 border-purple-800 rounded-lg h-10 py-2 px-4">
               <option>Thought Leadership</option>
               <option>Content Creation</option>
               <option>Strategic Communication</option>
             </select>
           </div>
           <div className="flex flex-col mb-4">
+            <label>Name of the project</label>
+            <input
+              className="border-2 border-blue-800 rounded-lg h-10 py-2 px-4"
+              type="text"
+              value={title}
+              placeholder="Title"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-col mb-4">
+            <label>What experience are you looking for</label>
+            <select className="border-2 border-blue-800 rounded-lg h-10 py-2 px-4">
+              <option>0-1 year</option>
+              <option>1-3 years</option>
+              <option>3-5 years</option>
+              <option>over 5 years</option>
+              <option>Any</option>
+            </select>
+          </div>
+          <div className="flex flex-col mb-4">
             <label>Describe the project and what you want done</label>
             <textarea
               value={description}
-              className="border-2 rounded-lg border-purple-800 h-40 py-2 px-4"
+              className="border-2 rounded-lg border-blue-800 h-40 py-2 px-4"
               type="text"
               placeholder="Details..."
               onChange={(e) => setDescription(e.target.value)}
@@ -132,7 +151,7 @@ const PostProject = () => {
             <label>How long should the project take (Days)</label>
             <input
               value={duration}
-              className="border-2 border-purple-800 rounded-lg h-10 py-2 px-4"
+              className="border-2 border-blue-800 rounded-lg h-10 py-2 px-4"
               type="number"
               placeholder="Timeline"
               onChange={(e) => setDuration(e.target.value)}
@@ -143,7 +162,7 @@ const PostProject = () => {
             <select
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              className="border-2 border-purple-800 rounded-lg h-10 py-2 px-4"
+              className="border-2 border-blue-800 rounded-lg h-10 py-2 px-4"
             >
               <option>Below 5000</option>
               <option>5000 - 15000</option>
@@ -176,14 +195,14 @@ const PostProject = () => {
             <label>Upload up to 5 relevant files</label>
             <input
               multiple
-              className="border-2 border-purple-800 rounded-lg h-12 py-2 px-4"
+              className="border-2 border-blue-800 rounded-lg h-12 py-2 px-4"
               type="file"
               onChange={handleFileChange}
             />
           </div>
           {renderUploadedFiles()}
           <button
-            className="w-1/5 rounded-lg border-2 py-2 px-4 bg-green-600 hover:bg-green-800"
+            className="w-2/5 rounded-lg border-2 py-2 px-4 bg-blue-600 hover:bg-blue-800"
             type="submit"
           >
             Submit
